@@ -1,0 +1,42 @@
+<section class="carousel-wrapper">
+  <div class="carousel-inner">
+    <ng-container *ngFor="let slide of slides; let i = index">
+      <div [ngClass]="{ active: currentSlide == i }" class="slide">
+        <div class="slide__img">
+          <div class="img__container">
+            <img class="slide__img" [src]="slide.imgSrc" alt="" />
+          </div>
+        </div>
+        <div class="slide__content">
+          <h1 class="heading-1">{{ slide.title }}</h1>
+          <p class="paragraph text-center">{{ slide.paragraph }}</p>
+          <a href="#" class="btn btn-primary btn-rounded slide__btn">
+            {{ slide.btnText }}
+            &rarr;
+          </a>
+          <div class="slide__indicators">
+            <span
+              [ngClass]="{ 'slide__indicator--active': currentSlide == i }"
+              *ngFor="let slide of slides; let i = index"
+              class="slide__indicator"
+            ></span>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="arrow-box">
+    <svg class="arrow" (click)="next()">
+      <use
+        xlink:href="../../../../../assets/images/sprite.svg#icon-keyboard_arrow_right
+      "
+      ></use>
+    </svg>
+  </div>
+  <svg class="arrow arrow--prev" (click)="prev()">
+    <use
+      xlink:href="../../../../../assets/images/sprite.svg#icon-keyboard_arrow_right
+      "
+    ></use>
+  </svg>
+</section>

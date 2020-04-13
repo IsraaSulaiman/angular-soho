@@ -1,0 +1,11 @@
+@import "../../../../assets/sass/variables";
+
+.new-products {
+  &__heading {
+    text-transform: capitalize;
+    color: $color-grey-2;
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+}
+

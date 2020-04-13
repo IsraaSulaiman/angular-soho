@@ -1,0 +1,13 @@
+@import "../../../../assets/sass/variables";
+
+.featured {
+  &__heading {
+    text-transform: capitalize;
+    color: $color-grey-2;
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+
+  background-color: white;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
+}

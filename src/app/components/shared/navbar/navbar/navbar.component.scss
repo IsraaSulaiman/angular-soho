@@ -1,0 +1,294 @@
+@import "../../../../../assets/sass/variables";
+@import "../../../../../assets/sass/mixins";
+
+.navbar {
+  background-color: #fff;
+  box-shadow: $box-shadow;
+  border-bottom: 1px solid $color-light;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+
+  .logo-wrapper {
+    img {
+      max-width: 170px;
+    }
+  }
+  .nav-wrapper {
+    .list-group {
+      display: flex;
+      list-style: none;
+      font-size: 1.2rem;
+      letter-spacing: $letter-spacing;
+
+      @media only screen and (max-width: 400px) {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      // .list-group-item {
+      //   @media only screen and (max-width: 450px) {
+      //     margin-bottom: 2rem;
+      //     padding: 0;
+      //   }
+      // }
+
+      .list-group-item {
+        text-transform: uppercase;
+      }
+
+      .list-group-item:not(:last-child) {
+        padding-right: 5rem;
+
+        @media only screen and (max-width: 450px) {
+          margin-bottom: 2rem;
+          padding: 0;
+        }
+      }
+
+      .list-link {
+        text-decoration: none;
+        color: $color-grey-2;
+        display: flex;
+        align-items: flex-end;
+
+        span {
+          border-bottom: 1px solid;
+          border-color: transparent;
+          transition: all 0.2s;
+        }
+
+        .nav-icon {
+          width: 2rem;
+          height: 2rem;
+          fill: $color-grey-2;
+          margin-left: 1rem;
+        }
+        &:hover {
+          span.nav-text {
+            border-color: $color-grey-2;
+          }
+        }
+      }
+
+      .menu-link {
+        display: flex;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        outline: none;
+        height: 100%;
+        align-items: center;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+//bag carts card
+.bag-card {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  font-size: 1.4rem;
+  color: #828a9bf2;
+  padding: 2.5rem 15rem;
+  border: 1px #ccc;
+  position: absolute;
+  top: 75%;
+  right: 15%;
+  font-weight: 200;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.nav--bag:hover ~ .bag-card {
+  visibility: visible;
+  opacity: 1;
+}
+
+//Navigation Menu
+
+.nav-menu-wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 87vh;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  padding: 7rem 17rem;
+  font-size: 3rem;
+  color: $secondary-color;
+  font-weight: 300;
+  text-transform: capitalize;
+  transition: all 0.3s;
+  // align-items: center;
+
+  @include respond(tab-land) {
+    padding: 7rem 5rem;
+  }
+
+  @include respond(tab-port) {
+    padding: 7rem 4rem;
+  }
+
+  @include respond(phone) {
+    flex-direction: column;
+    height: 130vh;
+  }
+}
+
+.col {
+  columns: 2;
+  width: 50%;
+  @include respond(tab-port) {
+    columns: 1;
+  }
+}
+
+.nav-menu {
+  list-style: none;
+  // align-self: flex-start;
+
+  &__item {
+    margin-bottom: 3rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $secondary-color;
+    transition: all 0.3s;
+  }
+
+  &__link:hover {
+    color: $primary-color;
+    border-bottom: 1px solid $primary-color;
+  }
+
+  &__item--small {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    color: $secondary-color;
+  }
+
+  &--others {
+    margin-right: auto;
+  }
+}
+
+.currency-select {
+  border: none;
+  background: transparent;
+  color: $secondary-color;
+}
+
+.input-group {
+  display: flex;
+  margin-top: 4rem;
+
+  @media only screen and (max-width: 700px) {
+    padding: 0;
+  }
+
+  .input-control {
+    padding: 0 7rem;
+    border: 1px solid #eee;
+    outline: none;
+
+    @media only screen and (max-width: 700px) {
+      padding: 0 2.4rem;
+    }
+  }
+
+  a {
+    @include anchorDefStyle($color-light);
+    display: block;
+    background: $primary-color;
+    padding: 2rem;
+    font-size: 1.4rem;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-weight: 400;
+
+    @media only screen and (max-width: 700px) {
+      padding: 1.5rem 0.6rem;
+    }
+  }
+
+  a:hover {
+    background: $color-grey-2;
+    color: $color-light;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.toggle {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 1rem;
+  position: relative;
+
+  span,
+  span::before,
+  span::after {
+    // height: 3px;
+    border-radius: 2px;
+    display: inline-block;
+    background: $color-grey-2;
+    height: 2px;
+    width: 2rem;
+    transition: all 0.2s;
+  }
+
+  span::before,
+  span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all 0.2s;
+  }
+
+  span::before {
+    top: -0.8rem;
+  }
+
+  span::after {
+    top: 0.8rem;
+  }
+
+  span.rotate-left {
+    background-color: transparent;
+  }
+
+  span.rotate-left::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+  span.rotate-right::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+}

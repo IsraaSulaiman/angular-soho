@@ -1,0 +1,59 @@
+@import "../variables";
+@import "../mixins";
+
+.btn {
+  display: inline-block;
+  padding: 2rem 6rem;
+  border: none;
+  text-decoration: none;
+  color: $color-light;
+  transition: all 0.3s;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $color-grey-2;
+    color: $color-light;
+    border: none;
+  }
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+
+.btn-rounded {
+  border-radius: 26px;
+}
+
+.btn-bordered {
+  border: 1px solid $primary-color;
+  background-color: transparent;
+  color: $primary-color;
+
+  & > * {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.readmore {
+  @include anchorDefStyle($primary-color);
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.15px;
+  padding-top: 0.4rem;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+}

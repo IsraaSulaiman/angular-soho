@@ -1,0 +1,60 @@
+@import "../../../assets/sass/variables";
+@import "../../../assets/sass/components/buttons";
+@import "../../../assets/sass/utilities";
+
+.recent-posts {
+  background: $color-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0 4rem 0;
+}
+.posts {
+  display: flex;
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+  }
+}
+
+.post {
+  margin-right: 2.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 200;
+  padding-bottom: 4rem;
+
+  &__title {
+    padding: 1rem 0;
+    letter-spacing: 0.1px;
+    line-height: 1.8;
+  }
+
+  &__img {
+    max-width: 350px;
+    width: 100%;
+    border-radius: 2px;
+    box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+  }
+
+  &__date {
+    color: $color-light-1;
+  }
+
+  &__content {
+    font-size: 1.4rem;
+    padding: 2.5rem;
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+    color: $color-grey-1;
+  }
+}
+
+.image-wrapper {
+  width: 100%;
+  max-height: 100%;
+}
+
+.view-more {
+  display: inline-block;
+  margin-bottom: 2rem;
+}

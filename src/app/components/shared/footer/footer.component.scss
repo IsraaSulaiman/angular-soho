@@ -1,0 +1,130 @@
+@import "../../../../assets/sass/variables";
+@import "../../../../assets/sass/utilities";
+@import "../../../../assets/sass/mixins";
+
+.footer {
+  display: flex;
+  padding-bottom: 5rem;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+
+  &__heading {
+    font-size: 1.6rem;
+    color: $color-grey-2;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+
+.social-media {
+  display: flex;
+  flex-basis: 55%;
+  margin-right: auto;
+  justify-content: space-between;
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  @include respond(phone) {
+    flex-wrap: wrap;
+  }
+
+  &__location {
+    .location-icon,
+    .tel-icon {
+      align-self: flex-start;
+    }
+
+    .tel-icon {
+      margin-right: 0.5rem;
+    }
+
+    .list-item {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__followus {
+
+    @media only screen and (max-width: 530px) {
+      width: 100%;
+    }
+
+    .social_icons {
+      padding: 3rem 0;
+      margin-left: auto;
+    }
+
+    .footer-icon {
+      width: 4rem;
+      height: 4rem;
+      fill: $color-light-1;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__sitemap {
+    .list-group {
+      padding: 3rem 0;
+      margin-left: auto;
+    }
+
+    .list-item {
+      margin-bottom: 1.7rem;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.newsletter {
+  @include respond(tab-port) {
+    padding: 1rem 3rem;
+  }
+
+  .input-group {
+    display: flex;
+  }
+
+  .input-control {
+    padding: 0 6rem;
+    border: 1px solid #eee;
+
+    @include respond(phone){
+      padding: 0 5px;
+      width: 100%;
+    }
+  }
+
+  a {
+    @include anchorDefStyle($color-light);
+    display: block;
+    background: $primary-color;
+    padding: 1.5rem;
+    font-size: 1.4rem;
+  }
+}
+
+.footer-icon {
+  width: 2rem;
+  height: 2rem;
+  fill: $primary-color;
+}
+
+.list-group {
+  list-style: none;
+}
+
+.location__content {
+  display: flex;
+  padding: 3rem 0;
+  align-items: center;
+}
+
+.list-item {
+  color: $color-grey-2;
+  font-weight: 200;
+}

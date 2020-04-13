@@ -1,0 +1,26 @@
+<div class="products">
+  <<ng-container *ngFor="let product of products; let i = index">
+    <figure class="products__figure">
+      <img
+        [src]="product.src"
+        alt="{{ product.title }}"
+        class="products__img"
+      />
+      <figcaption class="products__caption">
+        <a href="#" class="products__anchor">{{ product.title }}</a>
+        <span class="products__price">{{
+          product.price | currency: "USD":"symbol"
+        }}</span>
+      </figcaption>
+
+      <div class="products__details">
+        <span class="price">{{
+          product.price | currency: "USD":"symbol"
+        }}</span>
+        <a href="#" class="btn products__btn btn-bordered btn-rounded"
+          >Quick View</a
+        >
+      </div>
+    </figure>
+  </ng-container>
+</div>

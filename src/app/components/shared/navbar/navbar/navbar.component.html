@@ -1,0 +1,109 @@
+<nav class="navbar">
+  <div class="container navbar-container">
+    <div class="logo-wrapper">
+      <a href="#" class="logo-link">
+        <img
+          src="../../../../../assets/images/logo.jpg"
+          alt="soho logo"
+          class="logo-image"
+        />
+      </a>
+    </div>
+    <div class="nav-wrapper">
+      <ul class="list-group">
+        <li class="list-group-item nav--bag">
+          <a href="#" class="list-link ">
+            <span class="nav-text">bag</span>
+            <svg class="nav-icon">
+              <use
+                xlink:href="../../../../../assets/images/sprite.svg#icon-shopping-bag"
+              ></use>
+            </svg>
+          </a>
+        </li>
+        <li class="list-group-item">
+          <button (click)="toggleMenu()" class="menu-link list-link">
+            <span class="nav-text" *ngIf="!toggled">menu</span>
+            <span class="nav-text" *ngIf="toggled">close</span>
+
+            <!-- <svg class="nav-icon">
+              <use
+                xlink:href="../../../../../assets/images/sprite.svg#icon-menu"
+              ></use>
+            </svg> -->
+            <div class="toggle">
+              <span [ngClass]="{ 'rotate-right rotate-left': toggled }"></span>
+            </div>
+          </button>
+        </li>
+        <div class="bag-card">
+          Your bag is currently empty
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="nav-menu-wrapper"
+    [ngClass]="{ visible: toggled, hidden: !toggled }"
+  >
+    <div class="col">
+      <ul class="nav-menu nav-menu--products">
+        <li class="nav-menu__item ">
+          <a class="nav-menu__link" href="#">All products</a>
+        </li>
+        <li class="nav-menu__item">
+          <a class="nav-menu__link" href="#">beds</a>
+        </li>
+        <li class="nav-menu__item">
+          <a class="nav-menu__link" href="#">collars</a>
+        </li>
+        <li class="nav-menu__item">
+          <a class="nav-menu__link" class="nav-menu__link" href="#">leashes</a>
+        </li>
+        <li class="nav-menu__item">
+          <a class="nav-menu__link" href="#">sale</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul class="nav-menu nav-menu--actions">
+        <li class="nav-menu__item--small">
+          <a class="nav-menu__link" href="#">Shop</a>
+        </li>
+        <li class="nav-menu__item--small">
+          <a class="nav-menu__link" href="#">Blog</a>
+        </li>
+        <li class="nav-menu__item--small">
+          <a class="nav-menu__link" href="#">About</a>
+        </li>
+        <li class="nav-menu__item--small">
+          <a class="nav-menu__link" href="#"> Contact us</a>
+        </li>
+        <li class="nav-menu__item--small">
+          <a class="nav-menu__link" href="#">Account</a>
+        </li>
+        <li class="nav-menu__item--small">
+          <a class="nav-menu__link" href="#"> Gift certification</a>
+        </li>
+        <li class="nav-menu__item--small">
+          Currency
+          <select class="currency-select">
+            <option>AUD</option>
+            <option>CAD</option>
+            <option>EUR</option>
+            <option>GBP</option>
+            <option>USD</option>
+          </select>
+        </li>
+      </ul>
+      <div class="input-group">
+        <input
+          type="text"
+          class="input-control"
+          placeholder="Type in keyword"
+        />
+        <a href="#" class="btn btn-primary">search</a>
+      </div>
+    </div>
+  </div>
+</nav>

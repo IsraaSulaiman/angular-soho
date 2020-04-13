@@ -1,0 +1,61 @@
+@import "../../assets/sass/variables";
+@import "../../assets/sass/mixins";
+
+.u-padding-top-high {
+  padding-top: 8rem;
+}
+
+.u-padding-top-medium {
+  padding-top: 4rem;
+}
+
+.u-margin-top-high {
+  margin-top: 8rem;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 3rem;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+
+.container {
+  padding-right: 2rem;
+  padding-left: 2rem;
+  max-width: 1224px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.heading-1 {
+  @include headingStyle;
+  font-size: 3rem;
+  letter-spacing: 0.15rem;
+}
+
+.heading-2 {
+  @include headingStyle;
+  font-size: 2rem;
+}
+
+.heading-6 {
+  @include headingStyle;
+  font-size: 1.8rem;
+}
+
+.paragraph {
+  font-size: 1.8rem;
+  padding: 3rem 3.2em;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+
+  @media only screen and (max-width: 350px) {
+    padding: 1rem 0;
+  }
+}
+
+.text-center {
+  text-align: center;
+}

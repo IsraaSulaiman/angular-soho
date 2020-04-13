@@ -1,0 +1,17 @@
+@import "../../../assets/sass/mixins";
+
+.slider {
+  height: 87vh;
+
+  @include respond(tab-port) {
+    height: 150vh;
+  }
+
+  @include respond(phone) {
+    height: 110vh;
+  }
+
+  @media only screen and (max-width: 500px) {
+    height: 100vh;
+  }
+}

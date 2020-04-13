@@ -1,0 +1,17 @@
+<div class="recent-posts">
+  <h2 class="text-center u-margin-bottom-medium  u-padding-top-high heading-1">
+    Recent Posts
+  </h2>
+  <div class="posts container">
+    <div class="post" *ngFor="let post of posts">
+      <div class="image-wrapper">
+        <img [src]="post.src" alt="{{ post.title }}" class="post__img" />
+      </div>
+      <h5 class="post__title heading-6">{{ post.title }}</h5>
+      <span class="post__date">{{ post.date | date: "mediumDate" }}</span>
+      <p class="post__content">{{ substring(post.text) }}...</p>
+      <a href="#" class="readmore">Read more</a>
+    </div>
+  </div>
+  <a class="btn btn-rounded btn-bordered view-more">View more</a>
+</div>
